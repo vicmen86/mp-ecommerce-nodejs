@@ -22,7 +22,7 @@ class PaymentServices{
         title: name,
         description: "Dispositivo movil de Tienda e-commerce",
         //picture_url: "http://www.myapp.com/myimage.jpg",
-        picture_url:img,
+        picture_url:("https://mercado-pago-certificate.onrender.com" + img),
         category_id: "1234",
         quantity: Number(unit),
         currency_id: "ARS",
@@ -32,7 +32,7 @@ class PaymentServices{
 
     const preferences = {
       items,
-      external_reference: "comerciovancouver@gmail.com",
+      external_reference: process.env.EMAIL,
       payer: {
         name: "Lalo",
         surname: "Landa",
@@ -58,11 +58,11 @@ class PaymentServices{
         default_installments: 6
       },
       back_urls: {
-        success: "https://localhost:3001/success",
-        pending: "https://localhost:3001/pending",
-        failure: "https://localhost:3001/error"
+        success: "https://mercado-pago-certificate.onrender.com/success",
+        pending: "https://mercado-pago-certificate.onrender.com/pending",
+        failure: "https://mercado-pago-certificate.onrender.com/error"
       },
-      notification_url: "https://localhost:3001/webhook",
+      notification_url: "https://mercado-pago-certificate.onrender.com/webhook",
       auto_return: "approved"
     };
 
