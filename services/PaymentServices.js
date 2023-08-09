@@ -22,7 +22,7 @@ class PaymentServices{
         title: name,
         description: "Dispositivo movil de Tienda e-commerce",
         //picture_url: "http://www.myapp.com/myimage.jpg",
-        picture_url:("https://mercado-pago-certificate.onrender.com/" + img),
+        picture_url:`https://mercado-pago-certificate.onrender.com${img}`,
         category_id: "1234",
         quantity: Number(unit),
         currency_id: "ARS",
