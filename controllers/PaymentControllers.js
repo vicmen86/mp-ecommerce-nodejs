@@ -25,7 +25,7 @@ const paymentController=(req,res) => {
 // email: "test_user_94708656@testuser.com",
          phone: {
       area_code: "54",
-      number: Number(5550545687),
+      number: Number(2665038655),
     },
      identification: {
         type: "DNI",
@@ -34,7 +34,7 @@ const paymentController=(req,res) => {
     address: {
       street_name: "calle falsa",
       street_number: Number(123),
-      zip_code: "05700",
+      zip_code: 5700,
     },
   },
     back_urls: {
@@ -51,7 +51,7 @@ const paymentController=(req,res) => {
     ],
     excluded_payment_types: [   
       {
-        id: "atm",    
+        id: "tickets",    
       },
     ],
     
