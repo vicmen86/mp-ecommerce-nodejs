@@ -10,7 +10,7 @@ const paymentController=(req,res) => {
   let preference = {
     items: [
       {
-        id: Number(2023),
+        id: 2023,
         title: req.query.title,
         description: "Dispositivo móvil de Tienda e-commerce",
         picture_url: ("https://https://mercado-pago-certificate.onrender.com" + req.query.img),
@@ -49,12 +49,12 @@ const paymentController=(req,res) => {
         id: "visa",
       },
     ],
-    excluded_payment_types: [   
+   /*  excluded_payment_types: [   
       {
         id: "tickets",    
       },
     ],
-    
+     */
     installments: 6,
   },
   notification_url: `https://https://mercado-pago-certificate.onrender.com/webhook`, 
