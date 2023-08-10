@@ -28,7 +28,8 @@ router.post("/payment", (req, res) =>
 );
 router.post("/webhook", (req, res) => {
   //payment.webhook(req, res)
-  console.log(req.body);
+  console.log(req.body, "body enviado");
+  console.log(req.query, "query enviado");
   return res.status(200).send("OK");
 });
 module.exports = router;
