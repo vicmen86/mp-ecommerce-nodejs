@@ -18,7 +18,7 @@ class PaymentServices{
 
     const items = [
       {
-        id: "1234",
+        id: 1234,
         title: name,
         description: "Dispositivo movil de Tienda e-commerce",
         //picture_url: "http://www.myapp.com/myimage.jpg",
@@ -32,11 +32,10 @@ class PaymentServices{
 
     const preferences = {
       items,
-      external_reference: process.env.EMAIL,
       payer: {
         name: "Lalo",
         surname: "Landa",
-        email: "test_user_1086442003@testuser.com",
+        email: "test_user_1832719035@testuser.com",
         phone: {
           area_code: "54",
           number: process.env.PHONE
@@ -48,9 +47,10 @@ class PaymentServices{
         address: {
           zip_code: "D5700",
           street_name: "False",
-          street_number: "123"
+          street_number: 123
         }
       },
+      auto_return: "approved",
       payment_methods: {
         excluded_payment_methods: [
           {
@@ -59,15 +59,17 @@ class PaymentServices{
         ],
         excluded_payment_types: [{ id: "atm" }],
         installments: 6,
-        default_installments: 6
+       
       },
+      statement_descriptor: "CERTIFICACION MP",
       back_urls: {
         success: "https://mercado-pago-certificate.onrender.com/success",
         pending: "https://mercado-pago-certificate.onrender.com/pending",
         failure: "https://mercado-pago-certificate.onrender.com/error"
       },
       notification_url: "https://mercado-pago-certificate.onrender.com/webhook",
-      auto_return: "approved"
+      external_reference: "comerciovancouver@gmail.com",
+      
     };
 
     try {
