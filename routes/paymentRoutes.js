@@ -26,5 +26,9 @@ router.get("/pending", (req, res) => {
 router.post("/payment", (req, res) =>
   payment.mercadoPagoLink(req, res)
 );
-router.post("/webhook", (req, res) => payment.webhook(req, res));
+router.post("/webhook", (req, res) => {
+  //payment.webhook(req, res)
+  console.log(req.data);
+  return res.status(200).send("OK");
+});
 module.exports = router;
