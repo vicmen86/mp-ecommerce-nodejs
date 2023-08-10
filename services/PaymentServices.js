@@ -35,14 +35,14 @@ class PaymentServices{
       payer: {
         name: "Lalo",
         surname: "Landa",
-        email: "test_user_1832719035@testuser.com",
+        email: "test_user_1832719035@gmail.com",
         phone: {
-          area_code: "54",
+          area_code: 54,
           number: process.env.PHONE
         },
         identification: {
           type: "DNI",
-          number: "22334445"
+          number: 22334445
         },
         address: {
           zip_code: "D5700",
