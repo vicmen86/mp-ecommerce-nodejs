@@ -16,11 +16,11 @@ router.get("/success", (req, res) => {
 });
 
 router.get("/failure", (req, res) => {
-  res.render("failure");
+  res.render("failure",req.query);
 });
 
 router.get("/pending", (req, res) => {
-  res.render("pending");
+  res.render("pending", req.query);
 });
 router.get("/checkout", function (request, res) {
   res.render("checkout", request.query);
