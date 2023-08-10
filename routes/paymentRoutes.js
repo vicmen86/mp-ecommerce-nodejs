@@ -1,8 +1,7 @@
 const { Router } = require("express");
-const PaymentControllers = require('../controllers/PaymentControllers');
-const PaymentServices = require('../services/PaymentServices');
+const paymentController = require('../controllers/paymentControllers');
+
 const router = Router();
-const payment = new PaymentControllers(new PaymentServices());
 
 router.get("/", function (req, res) {
   res.render("home");
@@ -16,20 +15,32 @@ router.get("/success", (req, res) => {
   res.render("success", req.query);
 });
 
-router.get("/error", (req, res) => {
-  res.render("error");
+router.get("/failure", (req, res) => {
+  res.render("failure");
 });
 
 router.get("/pending", (req, res) => {
   res.render("pending");
 });
-router.post("/payment", (req, res) =>
-  payment.mercadoPagoLink(req, res)
-);
+router.get("/checkout", function (request, res) {
+  res.render("checkout", request.query);
+});
+
+router.post("/payment", paymentController);
+
 router.post("/webhook", (req, res) => {
   //payment.webhook(req, res)
   console.log(req.body, "body enviado");
   console.log(req.query, "query enviado");
   return res.status(200).send("OK");
+});
+router.get('/feedback', function (req, res) {
+  console.log(req.query)
+  res.json({
+    Payment: req.query.payment_id,
+    Status: req.query.status,
+    MerchantOrder: req.query.merchant_order_id
+  }).status(200).send("Ok");
+  
 });
 module.exports = router;
